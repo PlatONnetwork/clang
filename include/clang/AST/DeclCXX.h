@@ -727,6 +727,8 @@ public:
   /// Iterator that traverses the base classes of a class.
   using base_class_const_iterator = const CXXBaseSpecifier *;
 
+  bool isPlatonConstant() const { return hasAttr<PlatonConstantAttr>(); }
+
   CXXRecordDecl *getCanonicalDecl() override {
     return cast<CXXRecordDecl>(RecordDecl::getCanonicalDecl());
   }
@@ -2071,6 +2073,8 @@ public:
 
   bool isStatic() const;
   bool isInstance() const { return !isStatic(); }
+
+  bool isPlatonConstant() const { return hasAttr<PlatonConstantAttr>(); }
 
   /// Returns true if the given operator is implicitly static in a record
   /// context.

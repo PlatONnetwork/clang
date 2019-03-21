@@ -259,6 +259,13 @@ that appears to be capable of returning to its caller.
   }];
 }
 
+def PlatonConstantDocs : Documentation {
+  let Category = DocCatFunction;
+  let Content = [{
+The ``platon::constant`` attribute marks a method cannot change state.
+  }];
+}
+
 def CXX11NoReturnDocs : Documentation {
   let Category = DocCatFunction;
   let Content = [{
